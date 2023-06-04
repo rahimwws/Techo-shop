@@ -1,0 +1,23 @@
+header {
+    li {
+        margin-left: 30px;
+        float: left;
+    }
+
+    a {
+        color: #000000;
+    }
+
+
+
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+    .header-assets {
+        display: flex;
+        gap: 20px;
+    }
+}

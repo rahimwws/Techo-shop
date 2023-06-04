@@ -1,0 +1,136 @@
+.BasketNoItems {
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h2 {
+        font-size: 30px;
+        line-height: 37px;
+        color: #101010;
+        margin: 40px 0 20px 0;
+    }
+
+    p {
+        margin-bottom: 40px;
+        font-size: 20px;
+        line-height: 24px;
+        color: #838383;
+    }
+
+    button {
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        height: 55px;
+        background: inherit;
+        border: 1px solid #000000;
+        border-radius: 30px;
+        transition: all 0.5s;
+
+        &:hover {
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+            color: white;
+            background-color: #000000;
+        }
+    }
+}
+
+.Basket {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .basket-products {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+    }
+
+    .basket-item {
+        background: #FFFFFF;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 30px;
+        display: flex;
+        justify-content: space-between;
+
+        .basket-text {
+            margin-right: 200px;
+            align-self: center;
+            justify-self: start;
+
+            h2 {
+                font-size: 32px;
+            }
+
+            p {
+                font-size: 20px;
+                line-height: 18px;
+                margin-top: 10px;
+                color: #AAAAAA;
+
+            }
+        }
+
+        .basket-delete {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            button {
+                margin: 30px 0;
+                background-color: inherit;
+                border: none
+            }
+
+            p {
+                margin: 20px;
+                font-size: 20px;
+                line-height: 24px;
+                color: #838383;
+            }
+        }
+    }
+
+    .basket-prices {
+        background: #FFFFFF;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 30px;
+
+        p {
+            margin-top: 20px;
+            margin-bottom: 40px;
+        margin-left: 10px;            
+            font-size: 18px;
+            line-height: 18px;
+
+            color: #000000;
+
+        }
+
+        button {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            height: 55px;
+            background: #000000;
+            border: 1px solid #FFFFFF;
+            border-radius: 30px;
+            transition: all 0.5s;
+            color: #FFFFFF;
+
+            &:hover {
+                box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+                color: #000000;
+                background-color: #FFFFFF;
+            }
+        }
+    }
+}

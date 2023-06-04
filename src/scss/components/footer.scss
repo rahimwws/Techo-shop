@@ -1,0 +1,29 @@
+footer {
+    padding-bottom: 50px;
+    margin-top: 50px;
+    padding-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+
+    h2 {
+        font-size: 22px;
+        line-height: 28px;
+        /* identical to box height, or 125% */
+        margin-bottom: 30px;
+        color: #000000;
+    }
+
+    li {
+        margin: 10px 0;
+    }
+
+    a {
+        color: #000000;
+    }
+
+    .footer-logo p {
+        margin-top: 20px;
+    }
+}
