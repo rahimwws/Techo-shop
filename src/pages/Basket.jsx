@@ -1,18 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { BasketItems } from "../utils/basket";
 import { Link } from "react-router-dom";
 import "./../scss/basket.scss";
-import axios from "axios";
 export const Basket = () => {
-  // const [ basketItem,setBasketItem ] = useState([])
-  // const url = "https://dummyjson.com/products/"
-  // useEffect(()=>{
-  //   axios.get(url).then((response) => {
-  //     setBasketItem(response.data.products);
-  //   });
-  // },[])
-  let total  = 0
+  let total = useRef(0)
+  BasketItems.forEach((num)=>{
+    total.current+=Number( num[2])
+  })
   console.log(BasketItems);
+  console.log(total.current);
   return (
     <>
       {BasketItems.length == 0 && (
@@ -29,19 +25,19 @@ export const Basket = () => {
         <div className="Basket">
           <div className="basket-products">
             {BasketItems.map((item) => {
-              total += item[2]
+              
               return (
                 <div className="basket-item">
                   <img src={item[1]} alt="" width="300px" />
                   <div className="basket-text">
                     <h2> {item[0]} </h2>
-                    <p> {item[2]} TMT </p>
+                    <p> {parseInt( item[2])} TMT </p>
                   </div>
                   <div className="basket-delete">
-                    <button >
+                    <button>
                       <img src="/img/cross.png" alt="" width="20px" />{" "}
                     </button>
-                    <p> {item[2]} TMT</p>
+                    <p> {parseInt(item[2])} TMT</p>
                   </div>
                 </div>
               );
@@ -49,10 +45,10 @@ export const Basket = () => {
           </div>
           <div className="basket-prices">
             <p>
-              Итого: <span> {total} TMT</span>
+              Итого: <span> {parseInt(total.current)} TMT</span>
             </p>
             <Link to="/order">
-            <button>Перейти к оформлению</button>
+              <button>Перейти к оформлению</button>
             </Link>
           </div>
         </div>

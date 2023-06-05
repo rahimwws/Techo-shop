@@ -7,10 +7,15 @@ import { Link } from "react-router-dom";
 // import { product } from "../../utils/API";
 export const Iphones = () => {
   const [Products, setProducts] = useState([]);
-  const url = "https://dummyjson.com/products";
+  const url = "http://192.168.31.142:8000/api/product/"
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
     axios.get(url).then((response) => {
-      setProducts(response.data.products);
+      setProducts(response.data);
+      console.log(response.data);
     });
   }, [setProducts]);
 
@@ -23,8 +28,8 @@ export const Iphones = () => {
           return (
             <Link to={`/iphones/${product.id}`}>
               <Card
-                title={product.title}
-                img={product.images[0]}
+                title={product.name}
+                img={product.image}
                 price={product.price}
               />
             </Link>
