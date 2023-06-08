@@ -1,12 +1,18 @@
-import React from "react";
-import "./../../scss/components/Products.scss"  
+import React, { useContext } from "react";
+import "./../../scss/components/Products.scss";
 import { Link } from "react-router-dom";
-export const ProductSlide = () => {
+import { langText } from "../../utils/lang";
+import { AppContext } from "../../App";
+export const ProductSlide = (props) => {
+  const { index } = useContext(AppContext);
   return (
-    <Link to="/iphones/iphone13">
+    <Link to={props.link}>
       <div className="ProductSlide">
-        <h3>Iphone 14 Pro Max</h3>
-        <img src="/img/iphones14.jpg" alt="" />
+        <div className="div">
+          <h3> {props.text} </h3> <br />
+        </div>
+        <img src={props.imgDesktop} alt=""  width={props.width} />
+        <img src={props.imgMobile} alt="" className="img-mobile" />
       </div>
     </Link>
   );

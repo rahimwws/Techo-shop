@@ -40,3 +40,10 @@
         cursor: pointer;
     }
 }
+@media screen and (width<=500px) {
+    .Auth{
+        button{
+            width: 50%;
+        }
+    }
+}

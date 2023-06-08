@@ -5,8 +5,9 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-
-
+    img{
+        width: 150px;
+    }
     h2 {
         font-size: 22px;
         line-height: 28px;
@@ -25,5 +26,12 @@ footer {
 
     .footer-logo p {
         margin-top: 20px;
+    }
+}
+@media screen and (width<=500px) {
+
+    footer{
+        gap: 50px;
+        justify-content: start;
     }
 }

@@ -1,8 +1,8 @@
 import React from "react";
 import "../scss/order.scss";
-import { BasketItems} from "../utils/basket";
+import { useSelector } from "react-redux";
 export const Order = () => {
-  console.log(BasketItems);
+  const {items,totalPrice} = useSelector(state=>state.cart)
   return (
     <>
       <div className="Order">
@@ -12,22 +12,22 @@ export const Order = () => {
           <input type="text" placeholder="Ваш телефон" />
           <input type="text" placeholder="Описание" />
           <input type="text" placeholder="Адрес" />
+              <button>Заказать</button>
         </div>
         <div className="Order-price">
           <h2>Ваши заказ</h2>
           <div className="Order-items">
             <ul>
-              {BasketItems.map((item) => {
+              {items.map((item) => {
                 return (
                   <li>
-                    <p> {item[0]} </p> <span> {item[2]} </span>
+                    <p> {item.name} </p> <span> {item.price} </span>
                   </li>
                 );
               })}
             </ul>
-            <p>Итог: <span>  </span>  </p>
+            <p>Итог: <span> {totalPrice} </span>  </p>
           </div>
-          <button>Заказать</button>
         </div>
       </div>
     </>

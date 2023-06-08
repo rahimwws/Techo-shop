@@ -4,10 +4,9 @@ import { ProductSlide } from "../../components/Products/ProductSlide";
 import "./../../scss/components/Products.scss";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import ProductImg1 from "../../assets/img/iphone 14 on mobile.jpg"
-import ProductImg2 from "../../assets/img/iphones14.jpg"
+import ProductImg from "./../../assets/img/ipad.jpg"
 // import { product } from "../../utils/API";
-export const Iphones = () => {
+export const Ipad = () => {
   const category = useRef([])
   const [Products, setProducts] = useState([]);
   const url = "http://192.168.89.13:8000/api/product/"
@@ -21,13 +20,13 @@ export const Iphones = () => {
     });
   }, [setProducts]);
   Products.map((el)=>{
-    if(el.category == 1 ){
+    if(el.category == 3 ){
       category.current.push(el)
     }
   })
   return (
     <div className="Catalog">
-      <ProductSlide imgMobile = {ProductImg1} imgDesktop = {ProductImg2} text = "Iphone 14 Pro Max" width = "50%" link = '/iphones/'/>
+      <ProductSlide imgMobile = {ProductImg} imgDesktop = {ProductImg} text = "Ipad Pro" width = "30%" link = "/ipad/"/>
       <h2>Which iPhone is right for you?</h2>
       <div className="products-container">
         {category.current.map((product,key) => {
